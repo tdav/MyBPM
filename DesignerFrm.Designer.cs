@@ -24,64 +24,50 @@ namespace DevExpress.XtraDiagram.Demos {
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RibbonMainForm));
-            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
-            this.rpgAppearance = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.pmAppearance = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
-            this.bbiRoundedMode = new DevExpress.XtraBars.BarCheckItem();
-            ((System.ComponentModel.ISupportInitialize)(this.pmAppearance)).BeginInit();
-            this.SuspendLayout();
-            //
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DesignerFrm));
+            skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            rpgAppearance = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
+            bbiRoundedMode = new DevExpress.XtraBars.BarCheckItem();
+            SuspendLayout();
+            // 
             // skinDropDownButtonItem1
             // 
-            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
-            // 
-            // skinPaletteRibbonGalleryBarItem1
-            // 
-            this.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
-            //
-            // bbiRoundedMode
-            //
-            resources.ApplyResources(this.bbiRoundedMode, "bbiRoundedMode");
-            this.bbiRoundedMode.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiRoundedMode.ImageOptions.SvgImage")));
-            this.bbiRoundedMode.Name = "bbiRoundedMode";
-            this.bbiRoundedMode.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.OnRoundedModeCheckedChanged);
-            this.bbiRoundedMode.Visibility = DevExpress.Utils.WindowsVersionProvider.IsWindows11 ? XtraBars.BarItemVisibility.Always : XtraBars.BarItemVisibility.Never;
-
-            this.Ribbon.Items.AddRange(new XtraBars.BarItem[] {
-                this.skinDropDownButtonItem1,
-                this.skinPaletteRibbonGalleryBarItem1,
-                this.bbiRoundedMode
-            });
+            skinDropDownButtonItem1.ActAsDropDown = true;
+            skinDropDownButtonItem1.ButtonStyle = XtraBars.BarButtonStyle.DropDown;
+            skinDropDownButtonItem1.Id = 1;
+            skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
             // 
             // rpgAppearance
             // 
-            resources.ApplyResources(this.rpgAppearance, "rpgAppearance");
-            this.rpgAppearance.ItemLinks.Add(this.skinDropDownButtonItem1);
-            this.rpgAppearance.ItemLinks.Add(this.skinPaletteRibbonGalleryBarItem1);
-            this.rpgAppearance.ItemLinks.Add(this.bbiRoundedMode);
-            this.rpgAppearance.Name = "rpgAppearance";
-            this.rpgAppearance.CaptionButtonClick += new DevExpress.XtraBars.Ribbon.RibbonPageGroupEventHandler(this.RpgAppearance_CaptionButtonClick);
+            rpgAppearance.ItemLinks.Add(skinDropDownButtonItem1);
+            rpgAppearance.ItemLinks.Add(skinPaletteRibbonGalleryBarItem1);
+            rpgAppearance.ItemLinks.Add(bbiRoundedMode);
+            rpgAppearance.Name = "rpgAppearance";
+            rpgAppearance.CaptionButtonClick += RpgAppearance_CaptionButtonClick;
             // 
-            // pmAppearance
+            // skinPaletteRibbonGalleryBarItem1
             // 
-            this.pmAppearance.MenuDrawMode = DevExpress.XtraBars.MenuDrawMode.SmallImagesText;
-            this.pmAppearance.Name = "pmAppearance";
-            this.pmAppearance.Ribbon = this.Ribbon;
-            this.pmAppearance.ShowNavigationHeader = DevExpress.Utils.DefaultBoolean.True;
+            skinPaletteRibbonGalleryBarItem1.Id = 2;
+            skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
             // 
+            // bbiRoundedMode
+            // 
+            bbiRoundedMode.Id = 3;
+            bbiRoundedMode.Name = "bbiRoundedMode";
+            bbiRoundedMode.CheckedChanged += OnRoundedModeCheckedChanged;
             // 
             // DesignerFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1549, 833);
-            this.Name = "DesignerFrm";
-            ((System.ComponentModel.ISupportInitialize)(this.pmAppearance)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1549, 833);
+            IconOptions.Icon = (System.Drawing.Icon)resources.GetObject("DesignerFrm.IconOptions.Icon");
+            Name = "DesignerFrm";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
